@@ -1,0 +1,589 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  
+  <title>Fast Models 11.26 build 11 Release Notes</title>
+  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:300,400&amp;display=swap" as="style" crossorigin="anonymous">
+
+  <style>
+    body {
+      font-family:"Lato Light",Arial,sans-serif;
+      font-size: 12px;
+    }
+    h1 {
+      font-family:"Lato",Arial,sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: #0091BD;
+      display: inline;
+      vertical-align: top;
+      margin-left: 20px;
+    }
+    h2 {
+      font-family:"Lato",Arial,sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #0091BD;
+    }
+    h3 {
+      font-family:"Lato",Arial,sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #0091BD;
+    }
+    strong {
+      font-size: larger;
+      font-weight: bolder;
+      color: #0091BD;
+    }
+    a:link {
+      font-weight:bold;
+      color: #0091BD;
+      text-decoration: none;
+    }
+    a:visited {
+      color:#954F72;
+      text-decoration: underline;
+    }
+    blockquote {
+      border-top: 1px lightgray solid;
+      border-bottom: 1px lightgray solid;
+      padding-bottom: 10px;
+    }
+    .doctitle_confidentiality {
+      font-weight: bold;
+    }
+    .doctitle_copyright {
+      font-size: 9px;
+    }
+    .ArmPropNotice {
+      font-size: 10px;
+      color: #323E47;
+    }
+    .ArmPropNoticeSubheading {
+      font-size: 14px;
+      font-weight:bold;
+      color: #323E47;
+    }
+
+  </style>
+</head>
+<body>
+
+    <img alt="Arm logo" src="data:image.png;base64,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"/>
+    <h1>
+      
+      Fast Models 11.26 build 11
+      Release Notes
+    </h1>
+
+
+    <p class="doctitle_confidentiality">
+      Non-Confidential
+    </p>
+    <p class="doctitle_copyright">
+      Copyright &copy; 2024 Arm Limited (or its affiliates).&nbsp;&nbsp;Document ID 108097<br/>
+      All rights reserved.
+    </p>
+
+    <h2>Non-Confidential Proprietary Notice</h2>
+
+      <p class="ArmPropNotice">
+        This document is protected by copyright and other related rights and the practice or implementation of the information contained in this document may be protected by one or more patents or pending patent applications. No part of this document may be reproduced in any form by any means without the express prior written permission of Arm. No license, express or implied, by estoppel or otherwise to any intellectual property rights is granted by this document unless specifically stated.
+      </p>
+
+      <p class="ArmPropNotice">
+        Your access to the information in this document is conditional upon your acceptance that you will not use or permit others to use the information for the purposes of determining whether implementations infringe any third party patents.
+      </p>
+
+      <p class="ArmPropNotice">
+        THIS DOCUMENT IS PROVIDED &quot;AS IS&quot;. ARM PROVIDES NO REPRESENTATIONS AND NO WARRANTIES, EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, NON-INFRINGEMENT OR FITNESS FOR A PARTICULAR PURPOSE WITH RESPECT TO THE DOCUMENT. For the avoidance of doubt, Arm makes no representation with respect to, has undertaken no analysis to identify or understand the scope and content of, patents, copyrights, trade secrets, or other rights. 
+      </p>
+
+      <p class="ArmPropNotice">
+        This document may include technical inaccuracies or typographical errors.
+      </p>
+
+      <p class="ArmPropNotice">
+        TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL ARM BE LIABLE FOR ANY DAMAGES, INCLUDING WITHOUT LIMITATION ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF ANY USE OF THIS DOCUMENT, EVEN IF ARM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+      </p>
+
+      <p class="ArmPropNotice">
+        This document consists solely of commercial items. You shall be responsible for ensuring that any use, duplication or disclosure of this document complies fully with any relevant export laws and regulations to assure that this document or any portion thereof is not exported, directly or indirectly, in violation of such export laws. Use of the word &quot;partner&quot; in reference to Arm's customers is not intended to create or refer to any partnership relationship with any other company. Arm may make changes to this document at any time and without notice.
+      </p>
+
+      <p class="ArmPropNotice">
+        This document may be translated into other languages for convenience, and you agree that if there is any conflict between the English version of this document and any translation, the terms of the English version of the Agreement shall prevail.
+      </p>
+
+      <p class="ArmPropNotice">
+        The Arm corporate logo and words marked with
+        <span class="Armsuperscript">&reg;</span>
+         or &trade; are registered trademarks or trademarks of Arm Limited (or its affiliates) in the US and/or elsewhere. All rights reserved.  Other brands and names mentioned in this document may be the trademarks of their respective owners. Please follow Arm's trademark usage guidelines at
+        <a href="https://www.arm.com/company/policies/trademarks">https://www.arm.com/company/policies/trademarks</a>. 
+      </p>
+
+      <p class="ArmPropNotice">
+        Copyright
+        <span class="Armsuperscript">&copy;</span>
+         2024 Arm Limited (or its affiliates). All rights reserved.
+      </p>
+
+      <p class="ArmPropNotice">
+        Arm Limited. Company 02557590 registered in England.<br/>
+        110 Fulbourn Road, Cambridge, England CB1 9NJ.<br/>
+        (LES-PRE-20349)
+      </p>
+
+      <p class="ArmPropNoticeSubheading">
+          Confidentiality Status
+      </p>
+
+      <p class="ArmPropNotice">
+        This document is Non-Confidential. The right to use, copy and disclose this document may be subject to license restrictions in accordance with the terms of the agreement entered into by Arm and the party that Arm delivered this document to.
+      </p>
+
+      <p class="ArmPropNotice">
+        Unrestricted Access is an Arm internal classification.
+      </p>
+        
+      <p class="ArmPropNoticeSubheading">Feedback</p>
+        
+      <p class="ArmPropNotice">
+        Arm welcomes feedback on this product and its
+        documentation. To provide feedback on Fast Models,
+        create a ticket on <a href="https://support.developer.arm.com">https://support.developer.arm.com</a>.
+      </p>
+        
+      <p class="ArmPropNotice">
+        To provide feedback on the document, fill the following survey:
+        <a href="https://developer.arm.com/documentation-feedback-survey">https://developer.arm.com/documentation-feedback-survey</a>.
+      </p>
+        
+      <p class="ArmPropNoticeSubheading">Inclusive language commitment</p>
+        
+      <p class="ArmPropNotice">
+        Arm values inclusive communities. Arm recognizes that we
+        and our industry have used language that can be offensive. Arm strives to lead
+        the industry and create change.
+      </p>
+        
+      <p class="ArmPropNotice">
+        To report offensive language in
+        this document, email
+        <a href="mailto:terms@arm.com">terms@arm.com</a>.
+      </p> 
+    
+    <h2 id="rel_ovr">Release description</h2>
+
+    <h3 id="prod_desc">Product overview</h3>
+        <p>
+          Fast Models are accurate, flexible programmer's view models of Arm
+          IP, allowing you to develop software such as drivers, firmware, OS
+          and applications prior to silicon availability.
+          They allow full control over the simulation, including profiling,
+          debug and trace. Fast Models can be exported to SystemC and TLM 2.0,
+          allowing integration into the wider SoC design process.
+        </p>
+        <p>
+          Detailed documentation can be found in the Docs subfolder of your
+          Fast Models Portfolio installation, and on
+          <a href="https://developer.arm.com/products/system-design/fast-models/docs">developer.arm.com</a>
+        </p>
+        <p>
+          Some models are made available to provide early access before they are complete,
+          and may have limitations. The models have one of the following quality
+          categories:
+        </p>
+        <ul>
+          <li>Alpha:<br/>
+              The model implementation is at an early stage and is likely to change in
+              future releases. There might be significant defects or limitations in
+              the model.
+          </li>
+          <li>Preliminary support:<br/>
+              The model implementation is complete or almost complete. Testing is nearly to
+              the level of a fully-supported model. However, changes might still occur and
+              there are likely to be known defects present.
+          </li>
+          <li>Fully supported:<br/>
+              Also called Release quality. Support is complete and the model has been tested
+              as fully as possible. The modeled IP has reached its LAC milestone.
+          </li>
+        </ul>
+        <p>
+          Issues listed in this document have identifiers of the form [SDDKW-nnnn]. These are
+          Arm internal references only.
+        </p>
+
+
+    
+
+    <h2>Host requirements</h2>
+      <p>
+        Fast Models support the following architectures, operating systems and compilers:
+      </p>
+      <p>
+        For x86 host architectures:
+      </p>
+      <ul>
+        <li>RedHat Enterprise Linux 7 with GCC 7.3.0 and GCC 9.3.0</li>
+        <li>RedHat Enterprise Linux 8 with GCC 9.3.0 and GCC 10.3.0</li>
+        <li>Ubuntu 18.04 with GCC 7.3.0</li>
+        <li>Ubuntu 20.04 with GCC 9.3.0</li>
+        <li>Ubuntu 22.04 with GCC 10.3.0</li> 
+        <li>Windows 10 with Visual Studio 2019 - version 16.11 or later</li>
+      </ul>
+      <p>
+        When using Windows and Visual Studio, the following Visual Studio components are required:
+      </p>
+      <ul>
+        <li>Visual C++ ATL for x86 and x64</li>
+        <li>Windows SDK version 10.0.16299.0 or later</li>
+      </ul>
+      <p>
+        For AArch64 host architectures:
+      </p>
+      <ul>
+        <li>RedHat Enterprise Linux 8 with GCC 9.3.0 and GCC 10.3.0</li>
+        <li>Ubuntu 20.04 with GCC 9.3.0</li>
+        <li>Ubuntu 22.04 with GCC 10.3.0</li>
+      </ul>
+
+    <h2 id="download">Downloading and installation</h2>
+    <p>You must download the  11.26 deliverables from the Arm delivery server, Product Download Hub (PDH), and then unpack the contents.</p>  
+    
+    <h4>Prerequisites</h4>
+    <ul>
+        <li>You must have the necessary access rights for PDH.</li>
+        <li>Ensure you have sufficient space in your download area. Check the file size stated in PDH.</li>
+    </ul>
+    <h4>General installation guidelines</h4>
+    <p>
+      As a general rule, always download installers directly from the Arm
+      website and check the MD5 hashes listed for each download. Arm
+      recommends:
+    </p>
+    <ul>
+      <li>
+        Downloading and storing installers into directories that have limited
+        write access to prevent unauthorized tampering prior to executing the
+        installer. Typically, only the user downloading the installer should
+        have write access to the target directory.
+      </li>
+      <li>
+        Executing installers from a directory that only contains the
+        installer. Do not execute installers from a download directory where
+        other unrelated files are present. Compare the files integrity hashes
+        with those shown on the PDH download site.
+      </li>
+      <li>
+        Installing products into directories that have limited write access
+        to prevent unauthorized tampering prior to using the installed files.
+      </li>
+    </ul>
+    <p>
+      For further information and detailed steps, see
+      <a href="https://developer.arm.com/documentation/ka005596/latest">this knowledge base article</a>
+    </p>
+    <h4>Procedure</h4>
+    <ol>
+        <li>Go to <a href="https://developer.arm.com/downloads/view/FM000A">https://developer.arm.com/downloads/view/FM000A</a>.
+        <p>Check that the version shown is 11.26.<br/>
+        If another version is shown, click the
+        
+        <span class="bold">Revision</span> drop-down under <span class="bold">Releases</span>
+        and select the above version.</p></li>
+        <li>Click <span class="bold">Download Now</span> to download the package.</li>
+        <li>Choose your preferred download method and click <span class="bold">Download</span>.</li>
+        
+        <li>Select where to save the package to and click Save.
+          Arm recommends that you choose an empty directory with limited write permissions.
+        </li>
+        <li>
+          Navigate to the downloaded file, and verify its MD5 checksum against the checksum listed on PDH.
+        </li>
+        <li>Extract the downloaded file contents into the same directory.</li>
+        <li>If you are installing to a directory other than the default, Arm recommends
+          that you create the target installation directory first and set its permissions to give
+          write access only to the user performing the installation.
+        </li>
+        <li>Execute the installer from within that directory.</li>
+    </ol>
+    <p>For more information on installing and configuring, see <a href="https://developer.arm.com/documentation/100965/latest/Installing-Fast-Models/Installation">the Installation chapter in the Fast Models documentation</a>.</p>
+    <p>
+      The Fast Models Portfolio and Tools require a license. To set up your license,
+      please refer to the relevant instructions from the following:
+    </p>
+    <ul>
+      <li><a href="https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration">FlexNet Publisher license and toolkit configuration instructions</a>
+      </li>
+      <li><a href="https://lm.arm.com">User-based licensing documentation</a></li>
+    </ul>
+    <p>
+      If you are using a floating license with FlexNet Publisher, server binaries are
+      no longer shipped with the product; if you need them, please download from
+      <a href="https://developer.arm.com/downloads/-/download-flexnet-publisher">FlexNet Publisher downloads</a>.
+      Fast Models 11.26 requires FlexNet server version 11.16.6.0 or later.
+    </p>
+    <p>
+      A significant number of the examples in Fast Models Portfolio 11.26
+      make use of images containing third party IP. These have been split out into a
+      separate 'Third Party IP' package that can be downloaded from
+      <a href="https://developer.arm.com/downloads">Product Download Hub</a><br/>
+      Not installing these images will mean examples that require Dhrystone or the Linux
+      images will not be functional, and some other features might not work.
+    </p>
+
+    
+    <h2>Notice of future changes</h2>
+    <ul>
+<li>
+<p>Support for the Arm v7-A architecture and CPU models implementing Arm v7-A
+are deprecated and will be removed in a future release. Specifically, the
+following CPU models are deprecated:</p>
+<ul>
+<li>Cortex-A5</li>
+<li>Cortex-A7</li>
+<li>Cortex-A8</li>
+<li>Cortex-A9</li>
+<li>Cortex-A15</li>
+<li>Cortex-A17</li>
+</ul>
+</li>
+<li>
+<p>Support for the following models is deprecated and they will be removed
+in a future release:</p>
+<ul>
+<li>BP135TZSwitchControl</li>
+<li>BP141_TZMA</li>
+<li>BP147_TZPC</li>
+<li>CCI400</li>
+<li>CCI500</li>
+<li>CCI550</li>
+<li>CCN502</li>
+<li>CCN504</li>
+<li>CCN508</li>
+<li>CCN512</li>
+<li>DP500</li>
+<li>DP550</li>
+<li>DP650</li>
+<li>GFC100</li>
+<li>ICS307</li>
+<li>Mali-G51</li>
+<li>Mali-G72</li>
+<li>Mali-T624</li>
+<li>Mali-T880</li>
+<li>PL030 RTC</li>
+<li>PL108 MCI</li>
+<li>PL340 DMC</li>
+<li>SMMU-400</li>
+<li>V550</li>
+</ul>
+</li>
+<li>
+<p>Support for gcc 7.3 is deprecated and will be removed in a future release.</p>
+</li>
+<li>
+<p>Support for Red Hat Enterprise Linux 7 as a host operating system is
+deprecated, and will be removed in a future release.</p>
+</li>
+<li>
+<p>Support for cache state modelling beyond CPUs is deprecated, and support
+will be removed in a future release.</p>
+</li>
+<li>
+<p>The ability to disable <em>Timing Annotation</em> (TA) (via the use of the
+<code>FASTSIM_DISABLE_TA</code> environment variable) will be removed in a future
+release.</p>
+<p>TA is enabled by default in Fast Models. TA allows for accounting of
+delays added to transactions in the platform, as well as for Cycles Per
+Instruction (CPI) being different to 1 and supporting integration with
+SystemC TLM environments.</p>
+</li>
+<li>
+<p>The <code>--save</code> and <code>--restore</code> command-line options are deprecated and will
+be removed in a future release.</p>
+</li>
+<li>
+<p>The following example platforms are deprecated and will be removed in a
+future release:</p>
+<ul>
+<li>SGI-575</li>
+<li>SGM-775</li>
+<li>SGM-776</li>
+<li>RD_E1_Edge</li>
+<li>RD_N1_Edge</li>
+<li>RD_V1</li>
+<li>TC0</li>
+<li>TC1</li>
+</ul>
+</li>
+<li>
+<p>The Versatile Express (VE) example platforms are deprecated and will be
+removed in a future release.</p>
+</li>
+</ul>
+
+    <ul>
+      
+      <li>
+        <p>[SDDKW-91102]&nbsp;&nbsp;In the next release, some non-alphanumeric characters that are illegal in component names will be substituted with an underscore when passed to model APIs.</p>
+      </li>
+      
+      <li>
+        <p>[SDDKW-91023]&nbsp;&nbsp;The CADI debug API and Model Debugger have been deprecated for some time, and we expect to remove support for these in Fast Models 11.28. If you are still using CADI, you will need to migrate to the new Iris API for debug access to models.</p>
+      </li>
+      
+      <li>
+        <p>[SDDKW-89778]&nbsp;&nbsp;The "dmi-container-type" parameter on LISA components has been deprecated and will be removed in 11.27. After removal, the behaviour will be as if the "dmi-container-type" was set to "FullAttr" value. "TZAttr" value for this parameter is unsafe to use in most cases except maybe very simple platforms.</p>
+      </li>
+      
+      <li>
+        <p>[SDDKW-88976]&nbsp;&nbsp;The Embedded Trace Extension (ETE) is now enabled in each core using the parameter "cpu.has_ete" and configured using "cpu.ete.&lt;parameter_name&gt;". The ETE plugin is now deprecated, and is expected to be removed in FM 11.27.</p>
+
+<p>The Scalable Vector Extension (SVE) is now enabled in each core using the parameter "cpu.has_sve" and configured using "cpu.sve.&lt;parameter_name&gt;". The SVE plugin is now deprecated, and is expected to be removed in FM 11.27.</p>
+      </li>
+      
+      <li>
+        <p>[SDDKW-88281]&nbsp;&nbsp;GICv3IRI and GICv3IRI_Filter models have been removed in this release. You can use GIC_IRI and GIC_IRI_Filter instead.</p>
+      </li>
+      
+    </ul>
+    
+ 
+    <h2>New Features and Enhancements</h2>
+    
+    <h3>General changes in Fast Models 11.26</h3>
+    
+    <ul>
+      
+        <li>
+          <p>[SDDKW-91091]&nbsp;&nbsp;Fast Models 11.26 includes some refactoring of the binary translation engine to improve performance and maintainability long-term. In the near-term you may notice some variation in performance over the next few releases. Please report any significant performance degradation to Arm Support via <a href="https://support.developer.arm.com/" class="external-link" target="_blank" rel="nofollow noopener">https://support.developer.arm.com/</a> and we will address it in a future release.</p>
+        </li>
+      
+    </ul>
+    
+    
+    <h3>Changes to specific models or components in Fast Models 11.26</h3>
+    <ul>
+      
+        <li>
+          <p>[SDDKW-91199]&nbsp;&nbsp;It is now possible to export the PVMetaDataController as an EVS component, and integrate this into platforms similar to other EVS components.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-91198]&nbsp;&nbsp;Preliminary support has been added for the Ethos-U85 model.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-91100]&nbsp;&nbsp;Preliminary support has been added for the Mali-G78AE model.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-91099]&nbsp;&nbsp;The <span style="white-space:nowrap"><tt>pa_size</tt></span> parameter has been added to the Cortex-R82 model. This allows a configurable physical address size as supported by later revisions of the CPU.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-91098]&nbsp;&nbsp;Support has been added for the following models:</p>
+<ul>
+    <li>Cortex-X925</li>
+    <li>Cortex-A725</li>
+    <li>Neoverse-N3</li>
+    <li>Mali-G725</li>
+</ul><p></p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-91097]&nbsp;&nbsp;CMN700:</p>
+<ul>
+    <li>Added address compare hashed regions in HN-F SAM for power of 2 hashing across SN-Fs. A new trace 'HNSAM_Target_SNF' has been added. This trace displays the target SN-F from HN-F SAM.</li>
+    <li>Address masking is now supported in address compare hashed regions in HN-F SAM</li>
+    <li> Up to 16 hashed regions are supported in HN-F SAM</li>
+</ul><p></p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-90657]&nbsp;&nbsp;Support has been added to MMU-S3 for:</p>
+<ul>
+    <li>DPT Architectural Feature</li>
+    <li>Edge Triggered Integration mode</li>
+</ul><p></p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-89704]&nbsp;&nbsp;An issue has been fixed where PPUs in Arm v9-A cluster models would erroneously print a warning message: "PPU_coreX : tried changing opmode when opmode is disabled (NUM_OPMODE=0)"</p>
+
+<p> </p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-89458]&nbsp;&nbsp;CMN700: Added a new parameter, a4s_logicalid, to specify the A4S Logical Device ID to assign to a CCG Node.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-89294]&nbsp;&nbsp;CMN650, CMN650R2, CMN700: Corrected CFGM por_info_global reset values for the rsp_vc_num and dat_vc_num fields.</p>
+        </li>
+      
+        <li>
+          <p>[SDDKW-89165]&nbsp;&nbsp;The ARMCortexA510CT_CortexA710CT_CortexX2CT component incorrectly included a pmbirq port. This has been removed.</p>
+        </li>
+      
+    </ul>
+    
+
+    <h2 id="limitations">Limitations</h2>
+    <p>
+      This section contains information on model limitations for models that are new
+      in this release or new limitations that have been identified for existing models.
+      For more information on model limitations please refer to the Fast Models
+      Reference Guide in this release package or available on
+      <a href="https://developer.arm.com/documentation/100964/latest">developer.arm.com</a>
+    </p>
+    
+    <ul>
+      
+        <li>
+          <p>[SDDKW-63219]&nbsp;&nbsp;CMN600, CMN600AE, and CMN650 incorrectly look at the upper 32-bits of the APB address.  The upper address bits are expected to be 0 and the APB address is an offset that does not include PERIPHBASE.</p>
+
+<p>CMN650R2, CI700, CMN700 and future generations incorrectly look at the upper 32-bits of the APB address.  The APB address includes PERIPHBASE.</p>
+
+<p> </p>
+        </li>
+      
+    </ul>
+ 
+    <h2 id="other_issues">Other issues</h2>
+    
+    <ul>
+      
+        <li>
+          <p>[SDDKW-46555]&nbsp;&nbsp;CT model issues:</p>
+<ul>
+    <li>On Linux, a program which dynamically loads a model shared object file using <span style="white-space:nowrap"><tt>dlopen()</tt></span> must be linked with the pthread library (<span style="white-space:nowrap"><tt> -lpthread</tt></span>), even if the program is otherwise single-threaded. Failure to do so may result in a segmentation fault, or other abnormal termination, possibly with the message '<span style="white-space:nowrap"><tt>Enable multithreading to use std::thread: Operation not permitted</tt></span>', depending on the libstdc++ version. The underlying defect is a libstdc++ bug (#67791) which has been exposed by migrating the model to C++11 threads.</li>
+</ul><p></p>
+        </li>
+      
+    </ul>
+
+    <h2 id="support">Support</h2>
+    <p>If you have any issues with the installation, content or use of this release, create a ticket on <a href="https://support.developer.arm.com">https://support.developer.arm.com</a>. Arm will respond as soon as possible.</p>
+
+    <blockquote title="Note info">
+      
+        <img style="vertical-align: bottom;" alt="Note icon" src="data:image/png;base64,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">
+        <div style="display: inline-block; vertical-align: top;">
+      
+          <h3>Note</h3>
+          Support for this release of the product is only provided by Arm to partners who have a current support and maintenance contract for the product.
+      
+        </div>
+      
+    </blockquote>
+
+
+</body>
+</html>
